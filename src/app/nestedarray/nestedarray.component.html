@@ -1,0 +1,31 @@
+<div class="m-4">
+  <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+    <div class="form-group" formArrayName="emails">
+      <div
+        *ngFor="let email of emailsFormArray.controls; let i = index"
+        [formGroupName]="i"
+      >
+        <label for="exampleInputEmail1">Email address</label>
+        <input
+          type="email"
+          formControlName="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+        />
+        <button
+          type="button"
+          class="btn btn-primary m-2"
+          (click)="removeEmail(i)"
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary m-2" (click)="addEmail()">
+      Add Email
+    </button>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,9 @@
+<h2>Parent Component</h2>
+<button (click)="onparent()">click</button>
+<app-child
+  [messageFromParent]="message"
+  (messageToParent)="handleMessageFromChild($event)"
+  *ngFor="let prod of products"
+  [product]="prod"
+></app-child>
+<!-- <p>Message from Child: {{ messageFromChild }}</p> -->

@@ -1,0 +1,7 @@
+<div class="container">
+  <h6>Current Message: {{ currentMessage }}</h6>
+  <h1>sibling-one</h1>
+  Enter Message:
+  <input type="text" (keyup.enter)="sendMessage(message)" #message />
+  <button (click)="sendMessage(message)">Send</button>
+</div>
